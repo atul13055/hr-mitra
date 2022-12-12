@@ -1,0 +1,35 @@
+<div class="col-lg-12">	
+	<%= flash[:notice ] %>
+	<div class="card mt-5 mb-5 ">
+		<div class="card-body">
+		  <h2 class="text-center"> Employees List</h2>
+		</div>
+	</div>
+	<%= link_to "Create Employees", new_employee_path, class: "btn btn-primary btn-lg mb-4 " %>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th> Name</th>
+				<th>Email </th>
+				<th>Mobile </th>
+				<th>Address</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @employees.each do |employee| %>
+			<tr>
+				<td><%= employee.name %></td>
+				<td><%= employee.personal_email %></td>
+				<td><%= employee.mobile_number %></td>
+				<td><%= employee.full_address %></td>
+				<td>
+					<%= link_to "Edit", edit_employee_path(employee), class: "btn btn-primary "%>
+					<%= link_to "View", employee_path(employee), class: "btn btn-info "%>
+					<%= link_to "Delete", employee_path(employee), method: :delete, data: { confirm:"Are You Soure Delete This Employee" }, class: "btn btn-danger "%>
+				</td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>

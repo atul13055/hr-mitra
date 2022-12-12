@@ -1,0 +1,33 @@
+<div class="col-lg-12">	
+	<%= flash[:notice ] %>
+	<div class="card mt-5 mb-5 ">
+		<div class="card-body">
+		  <h2 class="text-center"> Employees Document List </h2>
+		</div>
+	</div>
+	<%= link_to "Create Document", new_document_path, class: "btn btn-primary btn-lg mb-4 " %>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th> Name</th>
+				<th> Doc_type  </th>
+				<th>Employee</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @documents.each do |document| %>
+			<tr>
+				<td><%= document.name %></td>
+				<td><%= document.doc_type %></td>
+				<td><%= link_to document.employee.name, employee_path(document.employee) %></td>
+				<td>
+					<%= link_to "Edit", edit_document_path(document), class: "btn btn-primary "%>
+					<%= link_to "View", document_path(document), class: "btn btn-info "%>
+					<%= link_to "Delete", document_path(document), method: :delete, data: { confirm:"Are You Soure Delete This Document " }, class: "btn btn-danger "%>
+				</td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>

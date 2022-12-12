@@ -1,0 +1,49 @@
+<div class="col-lg-12">
+	<div class="card rounded-0 mt-5 mb-5">
+		<div class="card-body">
+			<h2 class="text-center">Employee Deatils  </h2>
+			<div class="row">
+				<div class="col-lg-6">
+				 <h3 class="text-center"> Personal Information </h3>	
+				 <p class="lead"><strong>First Name: - </strong><%= @employee.first_name%></p>
+				 <p class="lead"><strong>Last Name: - </strong><%= @employee.last_name%></p>
+				  <p class="lead"><strong>Last Name: - </strong><%= @employee.personal_email %></p>
+				   <p class="lead"><strong>Date Of Birth: - </strong><%= @employee.date_of_birth %></p>
+				   <p class="lead"><strong>Job Title: - </strong><%= @employee.job_title %></p>
+				</div>
+				<div class="col-lg-6">
+				 <h3 class="text-center"> Address Information  </h3>
+				  <p class="lead"><strong>Address Line : - </strong><%= @employee.address_line_1%></p>
+				 <p class="lead"><strong>City: - </strong><%= @employee.city %></p>
+				  <p class="lead"><strong>State: - </strong><%= @employee.state %></p>
+				   <p class="lead"><strong>Country: - </strong><%= @employee.country %></p>
+				    <p class="lead"><strong>Pincode: - </strong><%= @employee.pincode %></p>		
+				</div>
+			</div>
+			<div class="row mt-5">
+				<h2 class="text-center" > Employee Documents </h2>
+				<% @employee.documents.each do |document|%>
+				 <div class="card">
+				 	<div class="card-body" >
+				 	  <div class="row">
+				 	  	<% if document.image.attached? %>
+				 	  	<div class="col-lg-4">
+				 	  		<%= image_tag document.image, class: "img-fluid" %>
+				 	  	</div>
+				 	  	<% end %>
+				 	  	<div class="col-lg-4">
+				 	  		<p class="lead">Document Name: <%= document.name %></p>
+				 	  	</div>
+				 	  	<div class="col-lg-4">
+				 	  		<p class="lead">Document Type:  <%= document.doc_type %></p>
+				 	  	</div>
+				 	  </div>
+				 	</div>
+				 </div>
+				<% end %>
+			</div>
+			<%= link_to "Back To Employee", employees_path, class: "btn btn-outline-primary btn-lg"%>
+			<%= link_to "Edit Employee", edit_employee_path(@employee), class: "btn btn-outline-danger btn-lg"%>
+		</div>
+	</div>
+</div>
