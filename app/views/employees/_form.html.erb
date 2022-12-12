@@ -5,18 +5,27 @@
 	   	  <div class="form-group">
 	   	  	<%= form.label :first_name, class: "mb-2"%>
 	   	  	<%= form.text_field :first_name, class: "form-control form-control-lg" %>
+	   	  	<% @employee.errors.full_messages_for(:first_name).each do |message| %>
+        <p class="text-danger"><%= message %></p>
+        <% end %>  	  
 	   	  </div>
 	   	</div>
 	   	<div class="col-lg-4">
 	   	  <div class="form-group">
 	   	  	<%= form.label :last_name, class: "mb-2"%>
 	   	  	<%= form.text_field :last_name, class: "form-control form-control-lg" %>
+	   	  	<% @employee.errors.full_messages_for(:last_name).each do |message| %>
+        <p class="text-danger"><%= message %></p>
+        <% end %>  	  
 	   	  </div>
 	   	</div>
 	   	<div class="col-lg-4">
 	   	  <div class="form-group">
 	   	  	<%= form.label :Job_title, class: "mb-2"%>
 	   	  	<%= form.text_field :job_title, class: "form-control form-control-lg" %>
+	   	  	<% @employee.errors.full_messages_for(:job_title).each do |message| %>
+        <p class="text-danger"><%= message %></p>
+        <% end %>  	  
 	   	  </div>
 	   	</div>
     </div>
@@ -25,18 +34,27 @@
 	   	  <div class="form-group">
 	   	  	<%= form.label :email, class: "mb-2"%>
 	   	  	<%= form.email_field :personal_email, class: "form-control form-control-lg" %>
+	   	  	<% @employee.errors.full_messages_for(:personal_email).each do |message| %>
+        <p class="text-danger"><%= message %></p>
+        <% end %>  	 
 	   	  </div>
 	   	</div>
 	   		<div class="col-lg-4">
 	   	  <div class="form-group">
 	   	  	<%= form.label :date_of_birth, class: "mb-2"%>
 	   	  	<%= form.date_field :date_of_birth, class: "form-control form-control-lg" %>
+	   	  	<% @employee.errors.full_messages_for(:date_of_birth).each do |message| %>
+        <p class="text-danger"><%= message %></p>
+        <% end %>  	 
 	   	  </div>
 	   	</div>
 	   	<div class="col-lg-4">
 	   	  <div class="form-group">
 	   	  	<%= form.label :Mobile, class: "mb-2"%>
 	   	  	<%= form.text_field :mobile_number, class: "form-control form-control-lg" %>
+	   	  	<% @employee.errors.full_messages_for(:mobile_number).each do |message| %>
+        <p class="text-danger"><%= message %></p>
+        <% end %>  	 
 	   	  </div>
 	   	</div>
 	</div>
