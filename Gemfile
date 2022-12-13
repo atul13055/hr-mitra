@@ -70,3 +70,4 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+gem 'country_select', '~> 6.0'

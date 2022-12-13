@@ -6,6 +6,7 @@
 				<div class="col-lg-6">
 				<% if @document.image.attached? %>
 				 <%= image_tag @document.image %>
+				 
                 <% end %>
 				 <p class="lead"><strong> Name: - </strong><%= @document.name%></p>
 	             <p class="lead"><strong> Doc_Type: - </strong><%= @document.doc_type %></p>

@@ -22,7 +22,7 @@
 	   	<div class="col-lg-4">
 	   	  <div class="form-group">
 	   	  	<%= form.label :Job_title, class: "mb-2"%>
-	   	  	<%= form.text_field :job_title, class: "form-control form-control-lg" %>
+	   	  	<%= form.select :job_title, options_for_select(Employee::JOB_TITLE, selected: employee.job_title ),{prompt:'select Job type'},{class: 'form-select form-select-lg'} %>
 	   	  	<% @employee.errors.full_messages_for(:job_title).each do |message| %>
         <p class="text-danger"><%= message %></p>
         <% end %>  	  
@@ -82,7 +82,7 @@
 	   	<div class="col-lg-4">
 	   	  <div class="form-group">
 	   	  	<%= form.label :country, class: "mb-2"%>
-	   	  	<%= form.text_field :country, class: "form-control form-control-lg" %>
+	   	  	<%= form.select :country, options_for_select(Employee::COUNTRYES, selected: employee.country ),{prompt:'select Country'},{class: 'form-select form-select-lg'} %>
 	   	  </div>
 	   	</div>
 	</div>
