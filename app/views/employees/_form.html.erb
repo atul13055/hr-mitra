@@ -1,4 +1,4 @@
-<%= form_with model: employee do |form| %>
+<%= form_with model: employee  do |form| %>
   <div class="row">
 
 	   	<div class="col-lg-4">
@@ -10,6 +10,16 @@
         <% end %>  	  
 	   	  </div>
 	   	</div>
+        	<div class="col-lg-4">
+	   	  <div class="form-group">
+	   	  	<%= form.label :Profile , class: "mb-2"%>
+	   	  	<%= form.file_field :profile_pick, class: "form-control form-control-lg" %>
+	   	  	<% @employee.errors.full_messages_for(:first_name).each do |message| %>
+        <p class="text-danger"><%= message %></p>
+        <% end %>  	  
+	   	  </div>
+	   	</div>
+
 	   	<div class="col-lg-4">
 	   	  <div class="form-group">
 	   	  	<%= form.label :last_name, class: "mb-2"%>
@@ -39,12 +49,12 @@
         <% end %>  	 
 	   	  </div>
 	   	</div>
-	   		<div class="col-lg-4">
+	   	<div class="col-lg-4">
 	   	  <div class="form-group">
 	   	  	<%= form.label :date_of_birth, class: "mb-2"%>
 	   	  	<%= form.date_field :date_of_birth, class: "form-control form-control-lg" %>
 	   	  	<% @employee.errors.full_messages_for(:date_of_birth).each do |message| %>
-        <p class="text-danger"><%= message %></p>
+           <p class="text-danger"><%= message %></p>
         <% end %>  	 
 	   	  </div>
 	   	</div>
@@ -100,4 +110,4 @@
 			<%= link_to "back to employee", employees_path, class: "btn btn-outline-primary btn-lg"%>
 		</div>
 	</div>
-  <% end %>
+<% end %>
