@@ -92,7 +92,7 @@
 	   	<div class="col-lg-4">
 	   	  <div class="form-group">
 	   	  	<%= form.label :country, class: "mb-2"%>
-	   	  	<%= form.select :country, options_for_select(Employee::COUNTRYES, selected: employee.country ),{prompt:'select Country'},{class: 'form-select form-select-lg'} %>
+	   	  	<%= form.country_select :country,{prompt:'select Country'},{class: 'form-select form-select-lg'} %>
 	   	  </div>
 	   	</div>
 	</div>
